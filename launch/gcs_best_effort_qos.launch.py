@@ -7,6 +7,7 @@ def generate_launch_description():
     image_listener_node = Node(
         package="image_tools",
         executable="showimage",
+        output='screen',
         parameters=[
             {"reliability": "best_effort"}
         ]
@@ -14,6 +15,7 @@ def generate_launch_description():
     sensor_listener_node = Node(
         package="operation_control",
         executable="sensor_bridge_listener",
+        output='screen',
         parameters=[
             {"reliability": "best_effort"}
         ]

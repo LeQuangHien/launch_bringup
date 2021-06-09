@@ -7,6 +7,7 @@ def generate_launch_description():
     image_publisher_node = Node(
         package="image_tools",
         executable="cam2image",
+        output='screen',
         parameters=[
             {"reliability": "best_effort"}
         ]
@@ -14,6 +15,7 @@ def generate_launch_description():
     sensor_publisher_node = Node(
         package="px4_ros_com",
         executable="sensor_combined_listener",
+        output='screen',
         parameters=[
             {"reliability": "best_effort"}
         ]
