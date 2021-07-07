@@ -20,6 +20,15 @@ def generate_launch_description():
             {"reliability": "best_effort"}
         ]
     )
+    offboard_control_node = Node(
+        package="px4_ros_com",
+        executable="offboard_control",
+        output='screen',
+        parameters=[
+            {"reliability": "best_effort"}
+        ]
+    )
     ld.add_action(image_publisher_node)
     ld.add_action(sensor_publisher_node)
+    ld.add_action(offboard_control_node)
     return ld

@@ -20,6 +20,15 @@ def generate_launch_description():
             {"reliability": "best_effort"}
         ]
     )
+    setpoint_advertiser_node = Node(
+        package="operation_control",
+        executable="setpoint_advertiser",
+        output='screen',
+        parameters=[
+            {"reliability": "best_effort"}
+        ]
+    )
     ld.add_action(image_listener_node)
     ld.add_action(sensor_listener_node)
+    ld.add_action(setpoint_advertiser_node)
     return ld

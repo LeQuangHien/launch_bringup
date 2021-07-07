@@ -14,6 +14,12 @@ def generate_launch_description():
         executable="sensor_combined_listener",
         output='screen'
     )
+    offboard_control_node = Node(
+        package="px4_ros_com",
+        executable="offboard_control",
+        output='screen'
+    )
     ld.add_action(image_publisher_node)
     ld.add_action(sensor_publisher_node)
+    ld.add_action(offboard_control_node)
     return ld
